@@ -1,7 +1,0 @@
-网页访问方式：
-第一种：运行tornado，打开cd 12330344_hw3,然后 python main.py,然后输入localhost:8888
-会出现一个总体网页显示，分别点击不同电影的海报，网页会跳转到对应的电影信息网页。
-
-第二种: 运行tornado，打开cd 12330344_hw3,然后 python main.py，然后输入你想要访问的页面，如tmnt的影评页面为：localhost:8888/tmnt
-
-第三种：运行tornado，打开cd 12330344_hw3,然后 python main.py，然后输入：localhost:8888/XIEYIZUN_MOVIES_PAGE/,再加上你想要访问的电影的名字，如访问tmnt的影评页面为：localhost:8888/XIEYIZUN_MOVIES_PAGE/tmnt
