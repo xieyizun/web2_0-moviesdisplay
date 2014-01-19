@@ -1,0 +1,90 @@
+/* movie.css */
+body {
+    background: url(images/background.png);
+    background-attachment: fixed;
+}
+div.top {
+   background-image: url(images/bannerbackground.png);
+   background-repeat: repeat-x;
+}
+h1 {
+   font-family: arial;
+   font-size:300%;
+   font-weight: bold;
+   text-align: center;
+}
+  
+div.total {
+  border: 4px solid gray;
+  margin: 2em 7em -5em 7em;
+  overflow: overflow;
+  width: auto;
+  height:auto;
+  position: relative;
+}
+div.header {
+   background:url(images/rottenbackground.png);
+   background-repeat: repeat-x;
+   color:white; 
+}
+div.header span {
+   font-size:500%;
+   color:red;
+  
+}
+div.total span#content {
+  float:left;
+  width: 70%;
+}
+div.total span table {
+   width: 48%;
+   float: left;
+   /*border: 2px solid black;*/
+   margin: 0 0 0 1em;
+}
+
+div.total span table#list {
+   width: 100%;
+}
+div.total table td#list div {
+   border: 2px solid gray;
+   width: 90%;
+   overflow: hidden;
+   background: PaleGoldenRod;
+}
+
+div.total span#not_header {
+   float:right;
+   right: 0;
+   width: 26%;
+   border: 0;
+   height: auto;
+   background: SeaGreen;
+}
+div.total div#footer {
+   clear: both;
+   position: relative;
+   bottom: 0;
+   background: SeaGreen;
+   border: 0;
+   width: auto;
+   text-align: center;
+   background: SeaGreen;
+   padding: 10px;
+}
+
+p.iron {
+  position: relative;
+  float: right;
+  clear: both;
+}
+
+dl {
+  padding-left: 1em;
+}
+dt {
+  font-weight: bold;
+}
+
+
+   

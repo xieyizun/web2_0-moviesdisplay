@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>{{title}}</title>
+	<meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+	<link href="{{static_url("css/movie.css")}}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+		<div class="top">
+			<img src="{{static_url("images/banner.png")}}" alt="Rancid Tomatoes" >
+		</div>
+
+		<h1>
+			{% for file in files %}
+			  {% if file.name == "info.txt" %}
+			      {{file.content[0]}}<br />({{file.content[2]}})
+			  {% end %}
+			{% end %}
+		</h1>
+
+	<div class="total">
+		<div class="header">			
+			{% for file in files %}
+			    {% if file.name == "info.txt" %}
+			       <img src="{{static_url("images/"+file.content[1]+".png")}}" alt="{{file.content[1]}}" />
+			       <span>{{file.content[3]}}</span>({{file.content[4]}} reviews total)
+			    {% end %}
+			{% end %}
+			<img src="{{ static_url( "movie/" + title + "/generaloverview.png") }}" alt="general overview" width="26%" style="float: right" />
+		</div>
+
+	<span id="content">
+	{% for file in files %}
+	    {% if file.name in ['review1.txt', 'review2.txt', 'review3.txt', 'review4.txt', 'review5.txt','review6.txt', 'review7.txt', 'review8.txt', 'review9.txt', 'review10.txt', 'review11.txt'] %}
+	    <table>
+	    <tr>	   	 
+              <td id="list">              
+                  <div>
+                       <p>
+			              <img src="{{static_url("images/" + file.content[1] + ".gif") }}" alt="{{file.content[1]}}" />
+			              <q>{{file.content[0]}}</q>
+		               </p>
+                  </div>
+				  <p>
+			           <img src="{{static_url("images/critic.gif")}}" alt="Critic" align="left" />
+			                {{file.content[2]}}<br />
+			                {{file.content[3]}}
+		          </p>
+              </td>             
+		</tr>
+		</table>
+		{% end %}		
+    {% end %}
+    </span>
+
+	<span id="not_header">		
+		    {% for file in files %}
+		       {% if file.name == 'generaloverview.txt' %}
+		          {% for line in file.content %}
+		             <dl>
+			             <dt>{{line.split(':')[0]}}</dt>
+			             <dd>{{line.split(':')[1]}}</dd>
+		             </dl>
+		          {% end %}
+		       {% end %}
+		    {% end %}		    
+	</span>
+
+	<div id="footer">
+		{% for file in files %}
+		    {% if file.name == 'info.txt' %}
+              (1-{{file.content[5]}}) of {{file.content[4]}}
+            {% end %}
+        {% end %}
+	</div>
+	</div>
+    <p class="iron">	
+		<a href="http://validator.w3.org/check/referer"><img src="{{ static_url("images/w3c-xhtml.png") }}" alt="Valid XHTML 1.1" border="0" /></a> <br />
+		<a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="{{ static_url("images/w3c-css.png") }}" alt="Valid CSS!" border="0" /></a>
+	</p>
+	</body>
+</html>
